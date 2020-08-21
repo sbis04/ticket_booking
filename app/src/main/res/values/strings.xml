@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Animation</string>
+    <string name="menu_button">menu button</string>
+    <string name="cover_image">cover image</string>
+    <string name="movie_title">Red Sparrow</string>
+    <string name="movie_desc">Drama | 2h 20m</string>
+    <string name="movie_rating">IMDb 6.6/10</string>
+    <string name="movie_status">In theaters</string>
+    <string name="desc_button">Description</string>
+    <string name="cast">CAST</string>
+    <string name="more_casts">+9</string>
+    <string name="cast_1">cast one</string>
+    <string name="cast_3">cast three</string>
+    <string name="cast_2">cast two</string>
+    <string name="movie_info">Dominika Egorova, a former ballerina, enrols in a Russian Intelligence programme and becomes a sparrow, using her body as a weapon to entrap a CIA agent.</string>
+    <string name="description_button">description button</string>
+    <string name="sunday">SUN</string>
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+</resources>
