@@ -2,6 +2,7 @@ package com.souvikbiswas.ticketbooking
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var movieTitle: TextView
     private lateinit var movieDescription: TextView
     private lateinit var movieRating: TextView
+    private lateinit var descriptionButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +46,10 @@ class MainActivity : AppCompatActivity() {
         movieTitle = movie_title
         movieDescription = desc
         movieRating = rating
+        descriptionButton = description_button
 
         var isCoverView = false
+        var isDescriptionView = false
 
         val initialConstraint = ConstraintSet()
         initialConstraint.clone(root)
@@ -59,24 +63,24 @@ class MainActivity : AppCompatActivity() {
         coverImage.setOnClickListener {
             if (!isCoverView) {
                 TransitionManager.beginDelayedTransition(root)
-                descriptionConstraint.applyTo(root)
+                finalConstraint.applyTo(root)
 
-//            movieStatus.setTextColor(Color.rgb(200,0,0))
+                val anim = ValueAnimator()
+                anim.setIntValues(Color.BLACK, Color.WHITE)
+                anim.setEvaluator(ArgbEvaluator())
+                anim.addUpdateListener {
+                    menuButton.setColorFilter(it.animatedValue as Int)
+                    movieStatus.setTextColor(it.animatedValue as Int)
+                    movieTitle.setTextColor(it.animatedValue as Int)
+                    movieDescription.setTextColor(it.animatedValue as Int)
+                    movieRating.setTextColor(it.animatedValue as Int)
+                    descriptionButton.setColorFilter(it.animatedValue as Int)
+                }
 
-//                val anim = ValueAnimator()
-//                anim.setIntValues(Color.BLACK, Color.WHITE)
-//                anim.setEvaluator(ArgbEvaluator())
-//                anim.addUpdateListener {
-//                    menuButton.setColorFilter(it.animatedValue as Int)
-//                    movieStatus.setTextColor(it.animatedValue as Int)
-//                    movieTitle.setTextColor(it.animatedValue as Int)
-//                    movieDescription.setTextColor(it.animatedValue as Int)
-//                    movieRating.setTextColor(it.animatedValue as Int)
-//                }
-//
-//                anim.duration = 300
-//                anim.start()
+                anim.duration = 300
+                anim.start()
                 isCoverView = true
+                isDescriptionView = false
             }
 
         }
@@ -86,22 +90,62 @@ class MainActivity : AppCompatActivity() {
                 TransitionManager.beginDelayedTransition(root)
                 initialConstraint.applyTo(root)
 
-//                val anim = ValueAnimator()
-//                anim.setIntValues(Color.WHITE, Color.BLACK)
-//                anim.setEvaluator(ArgbEvaluator())
-//                anim.addUpdateListener {
-//                    menuButton.setColorFilter(it.animatedValue as Int)
-//                    movieStatus.setTextColor(it.animatedValue as Int)
-//                    movieTitle.setTextColor(it.animatedValue as Int)
-//                    movieDescription.setTextColor(it.animatedValue as Int)
-//                    movieRating.setTextColor(it.animatedValue as Int)
-//                }
-//
-//                anim.duration = 300
-//                anim.start()
+                val anim = ValueAnimator()
+                anim.setIntValues(Color.WHITE, Color.BLACK)
+                anim.setEvaluator(ArgbEvaluator())
+                anim.addUpdateListener {
+                    menuButton.setColorFilter(it.animatedValue as Int)
+                    movieStatus.setTextColor(it.animatedValue as Int)
+                    movieTitle.setTextColor(it.animatedValue as Int)
+                    movieDescription.setTextColor(it.animatedValue as Int)
+                    movieRating.setTextColor(it.animatedValue as Int)
+                    descriptionButton.setColorFilter(it.animatedValue as Int)
+                }
+
+                anim.duration = 300
+                anim.start()
                 isCoverView = false
+                isDescriptionView = false
+            } else if (isDescriptionView) {
+                TransitionManager.beginDelayedTransition(root)
+                initialConstraint.applyTo(root)
+
+                isCoverView = false
+                isDescriptionView = false
             }
 
         }
+
+        descriptionButton.setOnClickListener {
+            if (!isDescriptionView) {
+                TransitionManager.beginDelayedTransition(root)
+                descriptionConstraint.applyTo(root)
+
+                if (isCoverView) {
+                    val anim = ValueAnimator()
+                    anim.setIntValues(Color.WHITE, Color.BLACK)
+                    anim.setEvaluator(ArgbEvaluator())
+                    anim.addUpdateListener {
+                        menuButton.setColorFilter(it.animatedValue as Int)
+                        movieStatus.setTextColor(it.animatedValue as Int)
+                        movieTitle.setTextColor(it.animatedValue as Int)
+                        movieDescription.setTextColor(it.animatedValue as Int)
+                        movieRating.setTextColor(it.animatedValue as Int)
+                        descriptionButton.setColorFilter(it.animatedValue as Int)
+                    }
+
+                    anim.duration = 300
+                    anim.start()
+                    isCoverView = false
+                }
+
+
+                isDescriptionView = true
+            }
+        }
     }
+}
+
+private operator fun ColorStateList?.invoke(valueOf: ColorStateList) {
+
 }
