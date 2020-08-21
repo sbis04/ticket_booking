@@ -128,28 +128,28 @@
         android:id="@+id/cast_two"
         android:layout_width="50dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
         android:contentDescription="@string/cast_2"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/movie_info"
+        app:layout_constraintBottom_toBottomOf="@+id/cast_three"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cast_three"
+        app:layout_constraintTop_toTopOf="@+id/cast_three"
         app:srcCompat="@drawable/cast_3" />
 
     <ImageView
         android:id="@+id/cast_three"
         android:layout_width="50dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
         android:contentDescription="@string/cast_3"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/movie_info"
+        app:layout_constraintBottom_toBottomOf="@+id/cast_one"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toStartOf="@+id/cast_two"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cast_one"
+        app:layout_constraintTop_toTopOf="@+id/cast_one"
         app:srcCompat="@drawable/cast_2" />
 
     <Button
@@ -157,21 +157,21 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/gray"
         android:text="@string/more_casts"
-        app:layout_constraintBottom_toTopOf="@+id/movie_info"
+        app:layout_constraintBottom_toBottomOf="@+id/cast_two"
         app:layout_constraintDimensionRatio="w,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cast_two" />
+        app:layout_constraintStart_toEndOf="@+id/cast_two"
+        app:layout_constraintTop_toTopOf="@+id/cast_two" />
 
     <TextView
         android:id="@+id/movie_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/poppins"
         android:text="@string/movie_info"
@@ -197,13 +197,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="cover,cast_two,cast_one,button,cast_three" />
+        app:constraint_referenced_ids="cover,cast_two,cast_one,button,cast_three"
+        tools:layout_editor_absoluteY="267dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movie_info"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/date_view_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/white"
+        android:paddingLeft="@dimen/selector_side_padding"
+        android:paddingEnd="@dimen/selector_side_padding"
+        android:paddingRight="@dimen/selector_side_padding"
+        app:layout_constraintBottom_toBottomOf="@+id/day_1"
+        app:layout_constraintEnd_toEndOf="@+id/day_3"
+        app:layout_constraintStart_toStartOf="@+id/day_3"
+        app:layout_constraintTop_toBottomOf="@+id/movie_info" />
+
+    <View
+        android:id="@+id/black_bar"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/date_view_1"
+        app:layout_constraintStart_toStartOf="@+id/date_view_1"
+        app:layout_constraintTop_toTopOf="@+id/date_view_1" />
 
     <TextView
         android:id="@+id/date_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="20"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -368,18 +405,47 @@
         app:layout_constraintStart_toEndOf="@+id/day_5"
         app:layout_constraintTop_toTopOf="@+id/day_5" />
 
-    <!--        <Button-->
-    <!--            android:id="@+id/containedButton"-->
-    <!--            android:layout_width="0dp"-->
-    <!--            android:layout_height="60dp"-->
-    <!--            android:background="@color/brick_red"-->
-    <!--            android:fontFamily="@font/poppins"-->
-    <!--            android:text="@string/desc_button"-->
-    <!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
-    <!--            android:textColor="@android:color/white"-->
-    <!--            app:icon="@drawable/ic_baseline_sort_24"-->
-    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+    <Button
+        android:id="@+id/containedButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/brick_red"
+        android:fontFamily="@font/poppins"
+        android:text="@string/book_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/white"
+        app:icon="@drawable/ic_baseline_sort_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/movie_theater_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/movie_theater_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/movie_theater_distance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_view_1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/movie_theater_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/theater_distance"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toTopOf="@+id/containedButton"
+        app:layout_constraintEnd_toEndOf="@+id/movie_theater_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/movie_theater_name"
+        app:layout_constraintTop_toBottomOf="@+id/movie_theater_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
