@@ -2,11 +2,9 @@ package com.souvikbiswas.ticketbooking
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -27,10 +25,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        window.setFlags(
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN
-//        )
 
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN)
 
@@ -144,8 +138,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}
-
-private operator fun ColorStateList?.invoke(valueOf: ColorStateList) {
-
 }
