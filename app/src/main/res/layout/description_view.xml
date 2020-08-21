@@ -214,7 +214,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/date_view_1"
+        android:id="@+id/date_selector"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="36dp"
@@ -223,18 +223,19 @@
         android:paddingEnd="@dimen/selector_side_padding"
         android:paddingRight="@dimen/selector_side_padding"
         app:layout_constraintBottom_toBottomOf="@+id/day_1"
-        app:layout_constraintEnd_toEndOf="@+id/day_3"
-        app:layout_constraintStart_toStartOf="@+id/day_3"
-        app:layout_constraintTop_toBottomOf="@+id/movie_info" />
+        app:layout_constraintEnd_toEndOf="@+id/day_1"
+        app:layout_constraintStart_toStartOf="@+id/day_1"
+        app:layout_constraintTop_toBottomOf="@+id/movie_info"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/black_bar"
         android:layout_width="0dp"
         android:layout_height="4dp"
         android:background="@android:color/black"
-        app:layout_constraintEnd_toEndOf="@+id/date_view_1"
-        app:layout_constraintStart_toStartOf="@+id/date_view_1"
-        app:layout_constraintTop_toTopOf="@+id/date_view_1" />
+        app:layout_constraintEnd_toEndOf="@+id/date_selector"
+        app:layout_constraintStart_toStartOf="@+id/date_selector"
+        app:layout_constraintTop_toTopOf="@+id/date_selector" />
 
     <TextView
         android:id="@+id/date_1"
@@ -258,7 +259,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="@+id/date_1"
         app:layout_constraintEnd_toEndOf="@+id/day_2"
-        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="@+id/day_2"
         app:layout_constraintTop_toTopOf="@+id/date_1"
         tools:text="21" />
@@ -430,7 +430,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_view_1"
+        app:layout_constraintTop_toBottomOf="@+id/date_selector"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView

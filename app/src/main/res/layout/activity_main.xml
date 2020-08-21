@@ -210,7 +210,7 @@
             app:layout_constraintTop_toBottomOf="parent" />
 
         <View
-            android:id="@+id/date_view_1"
+            android:id="@+id/date_selector"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginTop="16dp"
@@ -228,9 +228,9 @@
             android:layout_width="0dp"
             android:layout_height="4dp"
             android:background="@android:color/black"
-            app:layout_constraintEnd_toEndOf="@+id/date_view_1"
-            app:layout_constraintStart_toStartOf="@+id/date_view_1"
-            app:layout_constraintTop_toTopOf="@+id/date_view_1" />
+            app:layout_constraintEnd_toEndOf="@+id/date_selector"
+            app:layout_constraintStart_toStartOf="@+id/date_selector"
+            app:layout_constraintTop_toTopOf="@+id/date_selector" />
 
         <TextView
             android:id="@+id/date_1"
@@ -448,7 +448,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date_view_1"
+            app:layout_constraintTop_toBottomOf="@+id/date_selector"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
