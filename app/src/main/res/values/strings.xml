@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Animation</string>
+    <string name="app_name">Ticket Booking</string>
     <string name="menu_button">menu button</string>
     <string name="cover_image">cover image</string>
     <string name="movie_title">Red Sparrow</string>
     <string name="movie_desc">Drama | 2h 20m</string>
     <string name="movie_rating">IMDb 6.6/10</string>
     <string name="movie_status">In theaters</string>
-    <string name="desc_button">Description</string>
+    <string name="book_button">BOOK TICKETS</string>
     <string name="cast">CAST</string>
     <string name="more_casts">+9</string>
     <string name="cast_1">cast one</string>
@@ -21,4 +21,6 @@
     <string name="thursday">THU</string>
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
+    <string name="movie_theater_name">The Space Cinema</string>
+    <string name="theater_distance">1.6 km</string>
 </resources>
