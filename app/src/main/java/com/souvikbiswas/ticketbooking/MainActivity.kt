@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         initialConstraint.clone(root)
 
         val finalConstraint = ConstraintSet()
-        finalConstraint.clone(this, R.layout.final_view)
+        finalConstraint.clone(this, R.layout.cover_view)
 
         val descriptionConstraint = ConstraintSet()
         descriptionConstraint.clone(this, R.layout.description_view)
