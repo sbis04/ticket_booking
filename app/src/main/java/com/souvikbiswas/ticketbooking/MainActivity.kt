@@ -23,14 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var movieRating: TextView
     private lateinit var descriptionButton: ImageButton
 
-    private lateinit var day1: TextView
-    private lateinit var day2: TextView
-    private lateinit var day3: TextView
-    private lateinit var day4: TextView
-    private lateinit var day5: TextView
-    private lateinit var day6: TextView
-    private lateinit var day7: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,37 +42,29 @@ class MainActivity : AppCompatActivity() {
         movieRating = rating
         descriptionButton = description_button
 
-        day1 = day_1
-        day2 = day_2
-        day3 = day_3
-        day4 = day_4
-        day5 = day_5
-        day6 = day_6
-        day7 = day_7
-
         var isCoverView = false
         var isDescriptionView = false
 
         val initialConstraint = ConstraintSet()
         initialConstraint.clone(root)
 
-        val finalConstraint = ConstraintSet()
-        finalConstraint.clone(this, R.layout.cover_view)
+        val coverConstraint = ConstraintSet()
+        coverConstraint.clone(this, R.layout.cover_view)
 
         val descriptionConstraint = ConstraintSet()
         descriptionConstraint.clone(this, R.layout.description_view)
 
         val mapOfDays: Map<TextView, TextView> = mapOf(
-            day1 to date_1,
-            day2 to date_2,
-            day3 to date_3,
-            day4 to date_4,
-            day5 to date_5,
-            day6 to date_6,
-            day7 to date_7
+            day_1 to date_1,
+            day_2 to date_2,
+            day_3 to date_3,
+            day_4 to date_4,
+            day_5 to date_5,
+            day_6 to date_6,
+            day_7 to date_7
         )
 
-        val days: List<TextView> = listOf(day1, day2, day3, day4, day5, day6, day7)
+        val days: List<TextView> = listOf(day_1, day_2, day_3, day_4, day_5, day_6, day_7)
 
         for (day in days) {
             day.setOnClickListener { selectDate(it as TextView, descriptionConstraint) }
@@ -93,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         coverImage.setOnClickListener {
             if (!isCoverView) {
                 TransitionManager.beginDelayedTransition(root)
-                finalConstraint.applyTo(root)
+                coverConstraint.applyTo(root)
 
                 val anim = ValueAnimator()
                 anim.setIntValues(Color.BLACK, Color.WHITE)

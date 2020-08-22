@@ -225,8 +225,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/day_1"
         app:layout_constraintEnd_toEndOf="@+id/day_1"
         app:layout_constraintStart_toStartOf="@+id/day_1"
-        app:layout_constraintTop_toBottomOf="@+id/movie_info"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/movie_info" />
 
     <View
         android:id="@+id/black_bar"

@@ -21,7 +21,6 @@
             android:scaleType="centerCrop"
             app:layout_constraintDimensionRatio="2:3"
             app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/left_guideline"
             app:layout_constraintTop_toBottomOf="@+id/status"
             app:srcCompat="@drawable/red_sparrow" />
